@@ -175,37 +175,37 @@
             <div class="job-card" data-category="cs">
                 <span class="tag tag-dept">Customer Service</span><span class="tag tag-gray">Full-time</span>
                 <h3>Customer Support Specialist</h3>
-                <div class="job-meta"><span>📍 Remote — US & Canada</span> <span>💵 $23/hr</span></div>
+                <div class="job-meta"><span>📍 Remote — US & Canada</span> <span> $23/hr</span></div>
                 <button class="btn-view" onclick="openJob('cs1')">View details →</button>
             </div>
             <div class="job-card" data-category="cs">
                 <span class="tag tag-dept">Customer Service</span><span class="tag tag-gray">Full-time</span>
                 <h3>Senior Customer Experience Associate</h3>
-                <div class="job-meta"><span>📍 Remote — US & Canada</span> <span>💵 $32/hr</span></div>
+                <div class="job-meta"><span> Remote — US & Canada</span> <span>$32/hr</span></div>
                 <button class="btn-view" onclick="openJob('cs2')">View details →</button>
             </div>
             <div class="job-card" data-category="cs">
                 <span class="tag tag-dept">Customer Service</span><span class="tag tag-gray">Full-time</span>
                 <h3>Technical Support Representative</h3>
-                <div class="job-meta"><span>📍 Remote — US & Canada</span> <span>💵 $27/hr</span></div>
+                <div class="job-meta"><span> Remote — US & Canada</span> <span>$27/hr</span></div>
                 <button class="btn-view" onclick="openJob('cs3')">View details →</button>
             </div>
             <div class="job-card" data-category="da">
                 <span class="tag tag-dept">Data Analysis</span><span class="tag tag-gray">Full-time</span>
                 <h3>Data Analyst</h3>
-                <div class="job-meta"><span>📍 Remote — US & Canada</span> <span>💵 $25/hr</span></div>
+                <div class="job-meta"><span> Remote — US & Canada</span> <span>$25/hr</span></div>
                 <button class="btn-view" onclick="openJob('da1')">View details →</button>
             </div>
             <div class="job-card" data-category="da">
                 <span class="tag tag-dept">Data Analysis</span><span class="tag tag-gray">Full-time</span>
                 <h3>Senior Data Analyst</h3>
-                <div class="job-meta"><span>📍 Remote — US & Canada</span> <span>💵 $45/hr</span></div>
+                <div class="job-meta"><span> Remote — US & Canada</span> <span> $45/hr</span></div>
                 <button class="btn-view" onclick="openJob('da2')">View details →</button>
             </div>
             <div class="job-card" data-category="da">
                 <span class="tag tag-dept">Data Analysis</span><span class="tag tag-gray">Full-time</span>
                 <h3>Business Intelligence Analyst</h3>
-                <div class="job-meta"><span>📍 Remote — US & Canada</span> <span>💵 $30/hr</span></div>
+                <div class="job-meta"><span> Remote — US & Canada</span> <span>$30/hr</span></div>
                 <button class="btn-view" onclick="openJob('da3')">View details →</button>
             </div>
         </div>
@@ -224,9 +224,9 @@
         <span class="section-tag">Apply Online</span>
         <h2>Start your application</h2>
         <div class="form-card">
-            <form action="https://formspree.io/f/xnparokr" method="POST">
-                <div class="form-group"><label>Full name *</label><input type="text" name="name" placeholder="Jane Cooper" required></div>
-                <div class="form-group"><label>Email address *</label><input type="email" name="email" placeholder="jane@example.com" required></div>
+            <form id="career-form">
+                <div class="form-group"><label>Full name *</label><input type="text" name="from_name" placeholder="Jane Cooper" required></div>
+                <div class="form-group"><label>Email address *</label><input type="email" name="reply_to" placeholder="jane@example.com" required></div>
                 <div class="form-group"><label>Phone number *</label><input type="tel" name="phone" placeholder="+1 555 000 1234" required></div>
                 <div class="form-group"><label>Where are you based?</label><input type="text" name="location" placeholder="City, Country"></div>
                 <div class="form-group">
@@ -234,15 +234,19 @@
                     <select name="role" required>
                         <option value="">Select a role</option>
                         <optgroup label="Customer Service">
-                            <option>Customer Support Specialist</option><option>Senior CX Associate</option><option>Technical Support Rep</option>
+                            <option value="Customer Support Specialist">Customer Support Specialist</option>
+                            <option value="Senior CX Associate">Senior CX Associate</option>
+                            <option value="Technical Support Rep">Technical Support Rep</option>
                         </optgroup>
                         <optgroup label="Data Analysis">
-                            <option>Data Analyst</option><option>Senior Data Analyst</option><option>BI Analyst</option>
+                            <option value="Data Analyst">Data Analyst</option>
+                            <option value="Senior Data Analyst">Senior Data Analyst</option>
+                            <option value="BI Analyst">BI Analyst</option>
                         </optgroup>
                     </select>
                 </div>
-                <div class="form-group"><label>Microsoft Teams Email</label><input type="name" name="Microsoft_Teams_Email" placeholder="This is required for INTERVIEW"></div>
-                <div class="form-group"><label>Why Nexora?</label><textarea name="motivation" rows="4"></textarea></div>
+                <div class="form-group"><label>Microsoft Teams Email</label><input type="email" name="teams_email" placeholder="This is required for INTERVIEW"></div>
+                <div class="form-group"><label>Why Nexora?</label><textarea name="why_nexora" rows="4"></textarea></div>
                 
                 <!-- RESUME LINK BOX (OPTIONAL) -->
                 <div class="form-group">
@@ -274,7 +278,7 @@
             <div>
                 <h4 class="footer-header">GET IN TOUCH</h4>
                 <ul class="contact-list">
-                    <li>✉ <a href="mailto:hello@thenexorasolutions.info" style="color:var(--teal); text-decoration:none;">hello@thenexorasolutions.info</a></li>
+                    <li>✉ <a href="mailto:support@thenexorasolutions.info" style="color:var(--teal); text-decoration:none;">support@thenexorasolutions.info</a></li>
                    
                     <li style="font-size: 0.85rem; opacity: 0.8;">🏢  380 New York Street, Redlands, California 92373, USA.</li>
                 </ul>
@@ -285,6 +289,32 @@
             <div class="principles">Professionalism · Integrity · Growth · Teamwork · Respect</div>
         </div>
     </footer>
+
+    <!-- EMAILJS INTEGRATION SCRIPT -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init("iFhluG7UCkbswqblD");
+      })();
+
+      document.getElementById('career-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          const btn = event.target.querySelector('button');
+          const originalText = btn.innerHTML;
+          btn.innerHTML = "Sending...";
+
+          emailjs.sendForm('service_eim4te1', 'template_zii6xpk', this)
+            .then(function() {
+                alert('Application Sent Successfully! Please check your email for next steps.');
+                btn.innerHTML = originalText;
+                event.target.reset();
+            }, function(error) {
+                alert('FAILED to send: ' + JSON.stringify(error));
+                btn.innerHTML = originalText;
+            });
+      });
+    </script>
 
     <script>
         function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
