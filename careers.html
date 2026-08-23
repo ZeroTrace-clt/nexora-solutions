@@ -175,7 +175,7 @@
             <div class="job-card" data-category="cs">
                 <span class="tag tag-dept">Customer Service</span><span class="tag tag-gray">Full-time</span>
                 <h3>Customer Support Specialist</h3>
-                <div class="job-meta"><span>📍 Remote — US & Canada</span> <span> $23/hr</span></div>
+                <div class="job-meta"><span>Remote — US & Canada</span> <span> $23/hr</span></div>
                 <button class="btn-view" onclick="openJob('cs1')">View details →</button>
             </div>
             <div class="job-card" data-category="cs">
@@ -341,7 +341,7 @@
             const job = jobData[id];
             document.getElementById('modalContent').innerHTML = `
                 <h2 style="font-size:2rem; font-weight:800; margin-bottom:10px;">${job.title}</h2>
-                <p style="color:var(--teal); font-weight:600; margin-bottom:30px;">📍 ${job.loc} | ${job.sal}</p>
+                <p style="color:var(--teal); font-weight:600; margin-bottom:30px;"> ${job.loc} | ${job.sal}</p>
                 <div style="margin-bottom:30px;"><h3>What you'll do</h3><ul class="modal-list" style="list-style:none; padding:0;">${job.todo.map(i=>`<li><span style="color:var(--teal); font-weight:800;">✔</span> ${i}</li>`).join('')}</ul></div>
                 <div style="margin-bottom:30px;"><h3>What you'll bring</h3><ul class="modal-list" style="list-style:none; padding:0;">${job.bring.map(i=>`<li><span style="color:var(--teal); font-weight:800;">✔</span> ${i}</li>`).join('')}</ul></div>
                 <a href="#apply" class="modal-btn" onclick="closeJob()">Apply for this role →</a>`;
