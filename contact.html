@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X53CKTHE0B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-X53CKTHE0B');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Nexora Solutions</title>
+    <!-- Professional Large Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0A192F;
+            --teal: #2D9A8F;
+            --text-dark: #0A192F;
+            --text-gray: #4A5568;
+            --border: #E2E8F0;
+        }
+
+        /* --- GLOBAL STYLE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: #fff; color: var(--text-dark); line-height: 1.6; font-size: 18px; overflow-x: hidden; }
+
+        /* --- NAVIGATION --- */
+        nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 20px 5%; background: #fff; border-bottom: 1px solid var(--border); 
+            position: sticky; top: 0; z-index: 1000; 
+        }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; color: var(--navy); font-size: 1.4rem; }
+        .logo span { color: var(--teal); }
+        .logo-box { background: var(--navy); color: white; padding: 4px 12px; border-radius: 6px; }
+        
+        .nav-links { display: none; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-weight: 600; font-size: 1rem; }
+        .burger { font-size: 32px; cursor: pointer; display: block; }
+
+        /* --- MOBILE MENU OVERLAY --- */
+        .mobile-overlay {
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100%;
+            background: rgba(10, 25, 47, 0.4); z-index: 2000; transition: 0.3s;
+        }
+        .mobile-overlay.active { right: 0; }
+        .menu-content {
+            position: absolute; right: 0; width: 85%; height: 100%;
+            background: #fff; padding: 40px 30px; display: flex; flex-direction: column;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        }
+        .close-menu { align-self: flex-end; font-size: 40px; cursor: pointer; color: var(--teal); margin-bottom: 20px; }
+        .menu-links a { 
+            text-decoration: none; color: var(--text-dark); font-size: 1.4rem; 
+            font-weight: 700; padding: 20px 0; border-bottom: 1px dashed #E2E8F0; display: block;
+        }
+        .menu-pill-btn { 
+            background: var(--navy); color: white !important; padding: 18px; 
+            border-radius: 50px; text-align: center; margin-top: 40px; 
+            font-weight: 700; text-decoration: none; display: block;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero { padding: 80px 5% 40px; background: #fff; text-align: left; }
+        .section-tag { color: var(--teal); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; display: block; }
+        h1 { font-size: 3rem; line-height: 1.1; font-weight: 800; margin-bottom: 25px; }
+        h1 span { color: var(--teal); }
+        .hero-p { color: var(--text-gray); font-size: 1.2rem; max-width: 650px; margin-bottom: 40px; }
+
+        /* --- NAVY INQUIRY BOX --- */
+        .inquiry-container { padding: 0 5% 60px; }
+        .inquiry-box { 
+            background: #14213D; 
+            color: white; 
+            padding: 50px 30px; 
+            border-radius: 40px; 
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .inquiry-box h2 { font-size: 2.4rem; font-weight: 800; margin-bottom: 20px; }
+        .inquiry-box .desc { color: #CBD5E0; font-size: 1rem; margin-bottom: 40px; line-height: 1.5; opacity: 0.9; }
+        
+        .contact-method { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 35px; }
+        .icon-circle { 
+            min-width: 48px; height: 48px; background: rgba(45, 154, 143, 0.15); 
+            border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--teal); font-size: 1.3rem; 
+        }
+        .method-text b { display: block; font-size: 1.1rem; margin-bottom: 4px; font-weight: 700; }
+        .method-text span { color: #A0AEC0; font-size: 1rem; line-height: 1.4; display: block; }
+        .method-text a { color: var(--teal); text-decoration: underline; font-weight: 600; }
+
+        .response-time-box { 
+            background: rgba(10, 25, 47, 0.4); 
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 20px; 
+            border-radius: 20px; 
+            text-align: center; 
+            font-size: 1rem; 
+            color: #CBD5E0; 
+            margin-top: 20px;
+        }
+        .response-time-box span { color: var(--teal); font-weight: 600; }
+
+        /* --- CONTACT FORM --- */
+        .form-section { padding: 40px 5% 100px; background: #fff; }
+        .form-card { 
+            max-width: 700px; margin: 0 auto; background: #fff; padding: 10px; 
+            text-align: left;
+        }
+        .form-group { margin-bottom: 35px; }
+        label { display: block; font-weight: 700; margin-bottom: 12px; color: var(--navy); font-size: 1.1rem; }
+        input, textarea { 
+            width: 100%; padding: 18px; border: 1px solid #E2E8F0; border-radius: 15px; 
+            font-size: 1.1rem; color: var(--navy); background: #fff;
+        }
+        input::placeholder, textarea::placeholder { color: #A0AEC0; }
+        .btn-submit { 
+            width: 100%; background: var(--navy); color: white; padding: 20px; 
+            border-radius: 50px; font-weight: 700; border: none; font-size: 1.2rem; cursor: pointer; 
+        }
+
+        /* --- FOOTER --- */
+        footer { padding: 100px 5% 40px; border-top: 1px solid var(--border); background: #fff; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 60px; text-align: left; }
+        .footer-header { font-size: 0.9rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px; color: var(--navy); }
+        
+        /* NO DOTS LIST FIX */
+        footer ul { list-style: none !important; padding: 0 !important; }
+        .footer-links li, .contact-list li { margin-bottom: 15px; }
+        .footer-links a { text-decoration: none; color: var(--text-gray); font-weight: 500; }
+
+        .footer-bottom { 
+            border-top: 1px solid var(--border); 
+            margin-top: 80px; 
+            padding-top: 40px; 
+            text-align: center; 
+        }
+        .principles { 
+            display: flex; 
+            gap: 15px; 
+            color: #94a3b8; 
+            font-size: 0.9rem; 
+            justify-content: center; 
+            margin-top: 15px; 
+            flex-wrap: wrap; 
+        }
+
+        @media (min-width: 1024px) {
+            .nav-links { display: flex; } .burger { display: none; }
+            h1 { font-size: 4.5rem; }
+            .footer-grid { grid-template-columns: 2fr 1fr 1.5fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav>
+        <a href="index.html" class="logo"><div class="logo-box">N</div> Nexora <span>Solutions</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="burger" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Mobile Slide-in Menu -->
+    <div class="mobile-overlay" id="mobileMenu">
+        <div class="menu-content">
+            <div class="close-menu" onclick="toggleMenu()">✕</div>
+            <div class="menu-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a href="careers.html" class="menu-pill-btn">View open roles &nbsp; →</a>
+        </div>
+    </div>
+
+    <!-- Contact Hero -->
+    <header class="hero">
+        <span class="section-tag">CONTACT</span>
+        <h1>We'd love to <span>hear from you</span></h1>
+        <p class="hero-p">Questions about open roles, partnerships, or how our remote teams work? Send us a message — a real person will get back to you within 2 business days.</p>
+    </header>
+
+    <!-- Navy Inquiry Box -->
+    <section class="inquiry-container">
+        <div class="inquiry-box">
+            <h2>General inquiries</h2>
+            <p class="desc">For anything that isn't a job application — partnerships, press, or questions about Nexora Solutions — use the form or reach us directly.</p>
+            
+            <div class="contact-method">
+                <div class="icon-circle">✉</div>
+                <div class="method-text">
+                    <b></b>
+                    <span>hello@thenexorasolutions.info</span>
+                </div>
+            </div>
+
+            <div class="contact-method">
+                <div class="icon-circle">🏢 </div>
+                <div class="method-text">
+                    <b></b>
+                    <span>380 New York Street, Redlands, California 92373, USA.</span>
+                </div>
+            </div>
+
+            <div class="contact-method">
+                <div class="icon-circle">💼</div>
+                <div class="method-text">
+                    <b>Applying for a job?</b>
+                    <span>Please use the application form on our <a href="careers.html">Careers page</a> so it reaches the hiring team directly.</span>
+                </div>
+            </div>
+
+            <div class="response-time-box">
+                Typical response time: <span>under 2 business days</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="form-section">
+        <div class="form-card">
+            <form action="https://formspree.io/f/xoeabpnl" method="POST">
+                <div class="form-group">
+                    <label>Your name *</label>
+                    <input type="text" name="name" placeholder="Jane Cooper" required>
+                </div>
+                <div class="form-group">
+                    <label>Email address *</label>
+                    <input type="email" name="email" placeholder="jane@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" name="subject" placeholder="How can we help?">
+                </div>
+                <div class="form-group">
+                    <label>Message *</label>
+                    <textarea name="message" rows="6" placeholder="Tell us a bit about your inquiry..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send message &nbsp; →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="logo"><div class="logo-box">N</div> Nexora <span>Solutions</span></a>
+                <p style="margin-top:20px; color:var(--text-gray); max-width: 450px;">Building a skilled and reliable remote workforce in Customer Service and Data Analysis — connecting talented people with meaningful work, regardless of location.</p>
+            </div>
+            <div>
+                <h4 class="footer-header">COMPANY</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-header">GET IN TOUCH</h4>
+                <ul class="contact-list">
+                    <li>✉ <a href="mailto:hello@thenexorasolutions.info" style="color:var(--teal); text-decoration:none;">hello@thenexorasolutions.info</a></li>
+                    <li style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px;">🏢 380 New York Street, Redlands, California 92373, USA.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="copyright">© 2023 Nexora Solutions. All rights reserved.</p>
+            <div class="principles">Professionalism · Integrity · Growth · Teamwork · Respect</div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+    <!-- Statcounter code wrapped in hidden div to prevent text showing at bottom -->
+    <div style="display:none;">
+        <script type="text/javascript">
+        var sc_project=13351368; 
+        var sc_invisible=1; 
+        var sc_security="508da928"; 
+        var scJsHost = "https://";
+        document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+        "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+        <noscript><div class="statcounter"><a title="Web Analytics"
+        href="https://statcounter.com/" target="_blank"><img class="statcounter"
+        src="https://c.statcounter.com/13351368/0/508da928/1/" alt="Web Analytics"
+        referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    </div>
+    <!-- Default Statcounter code for Nexora Solutions http://thenexorasolutions.info -->
+    <script type="text/javascript">
+    var sc_project=13351368; 
+    var sc_invisible=0; 
+    var sc_security="508da928"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/13351368/0/508da928/0/" alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X53CKTHE0B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-X53CKTHE0B');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Nexora Solutions</title>
+    <!-- Professional Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #0A192F;
+            --teal: #2D9A8F;
+            --text-dark: #0A192F;
+            --text-gray: #4A5568;
+            --border: #E2E8F0;
+            --light-bg: #F9FFFF;
+        }
+
+        /* --- GLOBAL STYLE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: #fff; color: var(--text-dark); line-height: 1.6; font-size: 18px; overflow-x: hidden; }
+
+        /* --- NAVIGATION --- */
+        nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 20px 5%; background: #fff; border-bottom: 1px solid var(--border); 
+            position: sticky; top: 0; z-index: 1000; 
+        }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; color: var(--navy); font-size: 1.4rem; }
+        .logo span { color: var(--teal); }
+        .logo-box { background: var(--navy); color: white; padding: 4px 12px; border-radius: 6px; }
+        
+        .nav-links { display: none; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-weight: 600; font-size: 1rem; }
+        .burger { font-size: 32px; cursor: pointer; display: block; }
+
+        /* --- MOBILE MENU OVERLAY (FIXED VISIBILITY) --- */
+        .mobile-overlay {
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100%;
+            background: rgba(10, 25, 47, 0.4); z-index: 2000; transition: 0.3s;
+        }
+        .mobile-overlay.active { right: 0; }
+        .menu-content {
+            position: absolute; right: 0; width: 85%; height: 100%;
+            background: #fff; padding: 40px 30px; display: flex; flex-direction: column;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        }
+        .close-menu { align-self: flex-end; font-size: 40px; cursor: pointer; color: var(--teal); margin-bottom: 20px; }
+        
+        .menu-content a { 
+            text-decoration: none; color: var(--text-dark); 
+            font-size: 1.4rem; font-weight: 700; 
+            padding: 18px 0; border-bottom: 1px dashed #E2E8F0; 
+            display: block;
+        }
+        .menu-btn { 
+            background: var(--navy); color: #ffffff !important; padding: 18px; 
+            border-radius: 50px; text-align: center; margin-top: 40px; 
+            font-weight: 700; text-decoration: none; display: block;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero { padding: 80px 5%; background: linear-gradient(180deg, var(--light-bg) 0%, #fff 100%); }
+        h1 { font-size: 2.8rem; line-height: 1.1; font-weight: 800; margin-bottom: 20px; color: var(--navy); }
+        .underline { border-bottom: 5px solid #A8D5D0; display: inline-block; line-height: 0.8; }
+        .hero-p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 30px; max-width: 700px; }
+        
+        .section-tag { color: var(--teal); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; display: block; }
+        
+        /* --- IMAGE SECTION --- */
+        .image-section { padding: 40px 5%; }
+        .team-img-container { position: relative; max-width: 900px; margin: 0 auto; }
+        .team-img-container img { width: 100%; border-radius: 30px; display: block; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .floating-stats-card {
+            position: absolute; bottom: -20px; left: 20px; background: var(--navy);
+            padding: 20px 30px; border-radius: 20px; color: white; box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        .floating-stats-card h3 { color: var(--teal); font-size: 2.2rem; font-weight: 800; }
+
+        /* --- CONTENT SECTIONS --- */
+        .content-section { padding: 80px 5%; }
+        .content-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        h2 { font-size: 2.5rem; font-weight: 800; color: var(--navy); margin-bottom: 20px; }
+        .text-block p { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 20px; }
+
+        /* --- CTA SECTION --- */
+        .cta-bottom { padding: 100px 5%; text-align: center; background: #fff; border-top: 1px solid var(--border); }
+        .cta-bottom h2 { font-size: 2.5rem; font-weight: 800; color: var(--navy); margin-bottom: 20px; }
+        .cta-bottom p { color: var(--text-gray); font-size: 1.1rem; margin: 0 auto 30px; max-width: 600px; }
+        .btn { padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; background: var(--navy); color: white; transition: 0.3s; }
+
+        /* --- FOOTER (FIXED DOTS) --- */
+        footer { padding: 80px 5% 40px; border-top: 1px solid var(--border); background: #fff; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 50px; text-align: left; }
+        .footer-header { font-size: 0.9rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; color: var(--navy); }
+        
+        .footer-links, .contact-list { list-style: none !important; padding: 0 !important; }
+        .footer-links li, .contact-list li { margin-bottom: 15px; }
+        .footer-links a { text-decoration: none; color: var(--text-gray); }
+
+        .footer-bottom { border-top: 1px solid var(--border); margin-top: 80px; padding-top: 40px; text-align: center; }
+        .principles-list { display: flex; gap: 15px; color: #94a3b8; font-size: 0.9rem; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
+
+        @media (min-width: 1024px) {
+            .nav-links { display: flex; } .burger { display: none; }
+            h1 { font-size: 4rem; }
+            .content-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 2fr 1fr 1.5fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav>
+        <a href="index.html" class="logo"><div class="logo-box">N</div> Nexora <span>Solutions</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="burger" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileMenu">
+        <div class="menu-content">
+            <div class="close-menu" onclick="toggleMenu()">✕</div>
+            <div class="menu-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a href="careers.html" class="menu-btn">View open roles &nbsp; →</a>
+        </div>
+    </div>
+
+    <!-- About Hero -->
+    <header class="hero">
+        <span class="section-tag">About Nexora Solutions</span>
+        <h1>A remote company built around <span class="underline">people</span>, not places.</h1>
+        <p class="hero-p">Nexora Solutions hires talented professionals to work remotely as part of our growing team. Our mission is to build a skilled and reliable remote workforce.</p>
+    </header>
+
+    <!-- Team Photo Section -->
+    <section class="image-section">
+        <div class="team-img-container">
+            <img src="about-us.jpg" alt="Nexora Team working remotely">
+            <div class="floating-stats-card">
+                <h3>15+</h3>
+                <p>countries, one team</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Why We Exist -->
+    <section class="content-section">
+        <div class="content-grid">
+            <div class="text-block">
+                <span class="section-tag">Our Mission</span>
+                <h2>Empowering talent worldwide</h2>
+                <p>We started Nexora Solutions with a simple observation: talented, motivated people are everywhere — but meaningful career opportunities are not. Too many skilled professionals are locked out of good jobs simply because of where they live.</p>
+            </div>
+            <div class="text-block">
+                <span class="section-tag">Why We Exist</span>
+                <h2>Great work shouldn't depend on a zip code</h2>
+                <p>Today our remote team spans more than 15 countries, providing excellent customer support and turning data into useful business insights for the companies we serve. Our goal is to build a supportive remote team where employees can thrive without ever being asked to relocate or commute.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="cta-bottom">
+        <h2>Sound like a team you'd thrive in?</h2>
+        <p>Take a look at our open roles — your next career move might be one click away.</p>
+        <a href="careers.html" class="btn">Explore careers &nbsp; →</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="logo"><div class="logo-box">N</div> Nexora <span>Solutions</span></a>
+                <p style="margin-top:25px; color:var(--text-gray); max-width: 450px;">Building a skilled and reliable remote workforce in Customer Service and Data Analysis.</p>
+            </div>
+            <div>
+                <h4 class="footer-header">COMPANY</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-header">GET IN TOUCH</h4>
+                <ul class="contact-list">
+                    <li>✉ <a href="mailto:hello@thenexorasolutions.info" style="color:var(--teal); text-decoration:none;">hello@thenexorasolutions.info</a></li>
+                   
+                    <li style="font-size: 0.85rem; opacity: 0.8;">🏢  380 New York Street, Redlands, California 92373, USA.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2023 Nexora Solutions. All rights reserved.</p>
+            <div class="principles-list">
+                <span>Professionalism</span> · <span>Integrity</span> · <span>Growth</span> · <span>Teamwork</span> · <span>Respect</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+    </script>
+    <!-- Default Statcounter code for Nexora Solutions http://thenexorasolutions.info -->
+    <script type="text/javascript">
+    var sc_project=13351368; 
+    var sc_invisible=0; 
+    var sc_security="508da928"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img class="statcounter"
+    src="https://c.statcounter.com/13351368/0/508da928/0/" alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
+
+</body>
+</html>
